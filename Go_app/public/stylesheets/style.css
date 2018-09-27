@@ -1,0 +1,16 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+#candy-list {
+    list-style: none;
+    max-width: 500px;
+    padding: 0;
+}
+#candy-list li {
+    padding: 12px;
+    font-size: 16px;
+}

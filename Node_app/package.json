@@ -1,0 +1,14 @@
+{
+  "name": "rainbow",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@google-cloud/datastore": "^1.4.2",
+    "body-parser": "^1.18.3",
+    "debug": "^4.0.1",
+    "express": "4.16.3"
+  }
+}
