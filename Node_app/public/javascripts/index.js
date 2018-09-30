@@ -1,5 +1,5 @@
 window.onload = () => {
-    // getCandy();
+    getCandy();
     document.getElementById("candy-form").onsubmit = (e) => handleSubmit(e);
 };
 
@@ -9,7 +9,7 @@ const getCandy = () => {
     .then((results) => {
         if (results.items) {
             results.items.map((item) => {
-                addToList(item.text);
+                addToList(item.Text);
             })
         }
     });
@@ -18,8 +18,8 @@ const getCandy = () => {
 const handleSubmit = (e) => {
     const textInput = document.getElementById("candy-text");
     if (textInput.value.length > 0) {
-        addToList(textInput.value);
-        // save(textInput.value);
+        // addToList(textInput.value);
+        save(textInput.value);
     }
     e.preventDefault();
 };

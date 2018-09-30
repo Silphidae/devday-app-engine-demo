@@ -16,9 +16,9 @@ const (
 )
 
 type Candy struct {
-	ID      int64     `datastore:"-"`
-	Text    string    `json:"text"`
-	Created time.Time `json:"created"`
+	ID      int64 `datastore:"-"`
+	Text    string
+	Created string
 }
 
 type CandyList struct {
@@ -82,7 +82,8 @@ func routeCandyCreate(w http.ResponseWriter, r *http.Request) {
 	key := datastore.NewIncompleteKey(c, candyKind, nil)
 	var candy Candy
 	candy.Text = candyReq.Text
-	candy.Created = time.Now().UTC()
+	JavascriptISOString := "2006-01-02T15:04:05.999Z07:00"
+	candy.Created = time.Now().UTC().Format(JavascriptISOString)
 
 	key, err := datastore.Put(c, key, &candy)
 

@@ -13,7 +13,7 @@ function fromDatastore (obj) {
 }
 
 function list(limit, token, cb) {
-    const q = datastore.createQuery(kind).order('created');
+    const q = datastore.createQuery(kind).order('Created');
 
     datastore.runQuery(q, (err, entities, nextQuery) => {
         cb(err, err ? null : entities.map(fromDatastore))
@@ -25,8 +25,8 @@ function create(data, cb) {
     const entity = {
         key: key,
         data: [
-            { name: 'created', value: new Date().toJSON() },
-            { name: 'text', value: data.text, excludeFromIndexes: true }
+            { name: 'Created', value: new Date().toJSON() },
+            { name: 'Text', value: data.text, excludeFromIndexes: true }
         ]
     }
 

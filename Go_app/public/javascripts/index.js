@@ -9,7 +9,7 @@ const getCandy = () => {
     .then((results) => {
         if (results.items) {
             results.items.map((item) => {
-                addToList(item.text);
+                addToList(item.Text);
             })
         }
     });
@@ -32,7 +32,7 @@ const save = (value) => {
     })
     .then(response => response.json())
     .then((result) => {
-        addToList(result.text);
+        addToList(result.Text);
     });
 }
 
